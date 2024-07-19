@@ -4,6 +4,7 @@ import { CanceledError } from "axios";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 import { GameQuery } from "../App";
+import SearchInput from "../components/SearchInput";
 
 export interface Platform {
   id: number;
@@ -27,6 +28,7 @@ const useGames = (gameQuery: GameQuery) =>
         genres: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
+        search: gameQuery.searchText,
       },
     },
     [gameQuery]
